@@ -1,1 +1,11 @@
-console.log("Hello World")
+function getComputerChoice() {
+    const choices = ["rock" , "paper" , "scissors"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+}
+console.log(getComputerChoice());
+
+function getHumanChoice()  {
+   let sign = prompt();
+}
+console.log(getHumanChoice());
