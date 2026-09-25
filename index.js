@@ -30,7 +30,7 @@ function playGame() {
     button.addEventListener("click", () => {
       const computerChoice = getComputerChoice();
       const humanChoice = button.className;
-      playRound;
+      //playRound; // What was this even doing here???.
       const results = document.querySelector(".results");
       results.textContent = "";
       let userInput = document.createElement("p");
