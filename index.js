@@ -1,7 +1,3 @@
-//function getHumanChoice() {
-//  return prompt("Rock, Paper, or Scissors:").toLowerCase();
-//}
-
 function playGame() {
   function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -28,7 +24,7 @@ function playGame() {
       return "You Lose!";
     }
   }
-
+  //BUTTON LOGIC//
   let buttons = document.querySelectorAll("button");
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -45,24 +41,26 @@ function playGame() {
       computerInput.textContent = `Computer: ${computerChoice}`;
       results.appendChild(computerInput);
 
-      let gameResult = document.createElement("p");
-      gameResult.textContent = `Round result: ${playRound(humanChoice, computerChoice)}`;
-      results.appendChild(gameResult);
+      let roundResult = document.createElement("p");
+      roundResult.textContent = `Round result: ${playRound(humanChoice, computerChoice)}`;
+      results.appendChild(roundResult);
 
       let runningScore = document.createElement("p");
       runningScore.textContent = `Your score: ${humanScore} / Computer score: ${computerScore}`;
       results.appendChild(runningScore);
+
+      if (humanScore === 5) {
+        let winGame = document.createElement("p");
+        winGame.textContent = "You WON the game!";
+        results.append(winGame);
+      }
+      if (computerScore === 5) {
+        let loseGame = document.createElement("p");
+        loseGame.textContent = "You LOST the game!";
+        results.append(loseGame);
+      }
     });
   });
-  //  const humanChoice = getHumanChoice();
-
-  if (humanScore > computerScore) {
-    return `YOU WON!  Final score: You ${humanScore} - Computer ${computerScore}`;
-  } else if (humanScore < computerScore) {
-    return `YOU LOST!  Final score: You ${humanScore} - Computer ${computerScore}`;
-  } else {
-    return `IT'S A TIE!  Final score: You ${humanScore} - Computer ${computerScore}`;
-  }
 }
 
-console.log(playGame());
+playGame();
