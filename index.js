@@ -35,6 +35,19 @@ function playGame() {
       const computerChoice = getComputerChoice();
       const humanChoice = button.className;
       playRound;
+      const results = document.querySelector(".results");
+
+      let userInput = document.createElement("p");
+      userInput.textContent = `You: ${humanChoice}`;
+      results.appendChild(userInput);
+
+      let computerInput = document.createElement("p");
+      computerInput.textContent = `Computer: ${computerChoice}`;
+      results.appendChild(computerInput);
+
+      let gameResult = document.createElement("p");
+      gameResult.textContent = `Round result: ${playRound(humanChoice, computerChoice)}`;
+      results.appendChild(gameResult);
 
       console.log("You:", humanChoice);
       console.log("Computer:", computerChoice);
@@ -42,10 +55,6 @@ function playGame() {
     });
   });
   //  const humanChoice = getHumanChoice();
-
-  //
-
-  // 
 
   if (humanScore > computerScore) {
     return `YOU WON!  Final score: You ${humanScore} - Computer ${computerScore}`;
