@@ -49,9 +49,9 @@ function playGame() {
       gameResult.textContent = `Round result: ${playRound(humanChoice, computerChoice)}`;
       results.appendChild(gameResult);
 
-      console.log("You:", humanChoice);
-      console.log("Computer:", computerChoice);
-      console.log(playRound(humanChoice, computerChoice));
+      let runningScore = document.createElement("p");
+      runningScore.textContent = `Your score: ${humanScore} / Computer score: ${computerScore}`;
+      results.appendChild(runningScore);
     });
   });
   //  const humanChoice = getHumanChoice();
