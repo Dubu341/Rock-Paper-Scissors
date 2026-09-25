@@ -38,13 +38,13 @@ function getHumanChoice()  {
     
 }
 
-    for (let i = 0; i < 5; i += 1) {
+
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         console.log("You:", humanChoice)
         console.log("Computer:", computerChoice);
         console.log(playRound(humanChoice, computerChoice))
-    }
+
 
         
 
