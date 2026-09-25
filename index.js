@@ -32,7 +32,7 @@ function playGame() {
       const humanChoice = button.className;
       playRound;
       const results = document.querySelector(".results");
-
+      results.textContent = "";
       let userInput = document.createElement("p");
       userInput.textContent = `You: ${humanChoice}`;
       results.appendChild(userInput);
@@ -52,12 +52,12 @@ function playGame() {
       if (humanScore === 5) {
         let winGame = document.createElement("p");
         winGame.textContent = "You WON the game!";
-        results.append(winGame);
+        results.appendChild(winGame);
       }
       if (computerScore === 5) {
         let loseGame = document.createElement("p");
         loseGame.textContent = "You LOST the game!";
-        results.append(loseGame);
+        results.appendChild(loseGame);
       }
     });
   });
